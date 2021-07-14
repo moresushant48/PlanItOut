@@ -1,0 +1,2 @@
+pip install pyttsx3 (https://pypi.org/project/pyttsx3/)
+pip install ttkbootstrap (https://ttkbootstrap.readthedocs.io/en/latest/)

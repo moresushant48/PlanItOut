@@ -1,0 +1,7 @@
+Telegram
+
+C:\Users\mores\AppData\Roaming\Telegram Desktop\Telegram.exe
+
+Paint
+
+C:\Windows\System32\mspaint.exe
