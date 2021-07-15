@@ -1,3 +1,5 @@
+from globals import xPad, yPad
+
 from io import FileIO
 from progList import openNewWindow
 from tkinter import Frame, font, ttk, filedialog
@@ -18,10 +20,6 @@ engine.runAndWait()
 #
 #
 #
-
-paths = {}
-xPad = 16
-yPad = 8
 
 #
 #  TkInter Init & Style.
