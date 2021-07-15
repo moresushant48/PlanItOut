@@ -1,7 +1,7 @@
 from globals import xPad, yPad
 
 from io import FileIO
-from progList import openNewWindow
+from progList import openNewWindow, openPrograms
 from tkinter import Frame, font, ttk, filedialog
 from tkinter.constants import BOTH, BOTTOM, HORIZONTAL, LEFT, RIGHT, TOP, X, Y
 import pyttsx3 as tts
@@ -86,22 +86,16 @@ ttk.Entry(inputFrame, textvariable=varPath).pack(pady=yPad, fill=X)
 ttk.Button(inputFrame, text='Browse',
            command=file_opener).pack(side=LEFT, pady=yPad, fill=X, expand=1)
 
-# ttk.Separator(buttonFrame, orient=HORIZONTAL,
-#               style='primary.Horizontal.TSeparator').pack(pady=yPad, fill=X)
+ttk.Separator(buttonFrame, orient=HORIZONTAL,
+              style='primary.Horizontal.TSeparator').pack(pady=yPad, fill=X)
 
 ttk.Button(buttonFrame, text='Add',
            command=updatePaths).pack(side=LEFT, padx=1, pady=yPad, fill=X, expand=1)
 
 ttk.Button(buttonFrame, text='Open',
-           command=openPaths).pack(side=LEFT, padx=1, pady=yPad, fill=X, expand=1)
+           command=lambda: openPrograms(root=root)).pack(side=LEFT, padx=1, pady=yPad, fill=X, expand=1)
 
 ttk.Button(root, text='Show All Programs', style='primary.Outline.TButton',
            command=lambda: openNewWindow(root=root)).pack(side=BOTTOM, padx=xPad, fill=X, expand=1)
-
-# lstBox = tk.Listbox(rightFrame)
-# lstBox.pack(side=TOP)
-
-# tts.speak("Hello Everyone, I am your assistant for today.")
-# tts.speak("Lets Begin.")
 
 root.mainloop()
