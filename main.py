@@ -25,7 +25,7 @@ yPad = 8
 #
 #  TkInter Init & Style.
 #
-style = Style(theme='minty')
+style = Style(theme='journal')
 root = style.master
 root.title("PlanItOut")
 root.geometry("500x350")
