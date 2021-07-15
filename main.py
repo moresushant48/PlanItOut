@@ -65,16 +65,9 @@ def file_opener():
     varPath.set(input)
 
 
-def openPaths():
-    for item in paths:
-        tts.speak("Opening " + item)
-        os.startfile(paths[item])
-
-
 #
 # DESIGN UI
 #
-
 ttk.Label(inputFrame, text='Enter Application Name',
           style='primary.TLabel').pack(pady=yPad, fill=X)
 ttk.Entry(inputFrame, textvariable=varName).pack(pady=yPad, fill=X)
