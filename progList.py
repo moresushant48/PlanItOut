@@ -9,6 +9,7 @@ from tkinter.constants import BOTH, END, TOP, X
 
 
 def loadApplicationsToListbox(lstBox):
+    lstBox.delete(0, END)
     F = open(APP_TXT, "r")
     lines = F.readlines()
 
@@ -29,7 +30,7 @@ def deleteItem(lstBox):
                     pass
                 else:
                     f.write(line)
-                    loadApplicationsToListbox(lstBox=lstBox)
+    loadApplicationsToListbox(lstBox=lstBox)
 
 
 def openNewWindow(root):
