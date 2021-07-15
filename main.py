@@ -1,4 +1,4 @@
-from globals import xPad, yPad, APP_NAME
+from globals import TXT_SEPERATOR, xPad, yPad, APP_NAME
 
 from io import FileIO
 from progList import openNewWindow, openPrograms
@@ -55,7 +55,7 @@ varPath = tk.StringVar(root)
 def updatePaths():
     print("Updating paths")
     F = open("applications.txt", "a+")
-    F.write(f'{varName.get()},{varPath.get()}\n')
+    F.write(f'{varName.get()}{TXT_SEPERATOR}{varPath.get()}\n')
     F.close()
 
 

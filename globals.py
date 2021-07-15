@@ -2,6 +2,7 @@ from tkinter import messagebox
 
 APP_NAME = "Plan It Out"
 APP_TXT = "applications.txt"
+TXT_SEPERATOR = " : "
 
 paths = {}
 xPad = 16

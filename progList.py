@@ -1,5 +1,5 @@
 from json import load
-from globals import APP_TXT, xPad, yPad
+from globals import APP_TXT, xPad, yPad, TXT_SEPERATOR
 
 import os
 import tkinter as tk
@@ -13,8 +13,8 @@ def loadApplicationsToListbox(lstBox):
     lines = F.readlines()
 
     for line in lines:
-        info = line.split(',')
-        lstBox.insert(END, f"{info[0]},{info[1]}")
+        info = line.split(TXT_SEPERATOR)
+        lstBox.insert(END, f"{info[0]}{TXT_SEPERATOR}{info[1]}")
 
     F.close()
 
@@ -43,7 +43,6 @@ def openNewWindow(root):
     btnDelete = ttk.Button(newWindow, text="Delete",
                            command=lambda: deleteItem(lstBox=lstBox))
     btnDelete.pack(fill=X)
-
     loadApplicationsToListbox(lstBox=lstBox)
 
 
@@ -51,6 +50,6 @@ def openPrograms(root):
     F = open("applications.txt", "r+")
     lines = F.readlines()
     for line in lines:
-        info = line.split(',')
+        info = line.split(TXT_SEPERATOR)
         tts.speak("Opening " + info[0])
         os.startfile(info[1][:-1])

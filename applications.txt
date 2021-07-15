@@ -1,2 +1,0 @@
-CPUZ,C:/Program Files/CPUID/CPU-Z/cpuz.exe
-CPUZ,C:/Program Files/CPUID/CPU-Z/cpu.exe
