@@ -1,3 +1,4 @@
+from io import FileIO
 from progList import openNewWindow
 from tkinter import Frame, font, ttk, filedialog
 from tkinter.constants import BOTH, BOTTOM, HORIZONTAL, LEFT, RIGHT, TOP, X, Y
@@ -30,6 +31,9 @@ root = style.master
 root.title("PlanItOut")
 root.geometry("500x350")
 
+#
+# Setup Frames Structures.
+#
 inputFrame = Frame(root)
 inputFrame.pack(
     side=TOP, fill=BOTH, padx=16)
@@ -38,15 +42,23 @@ buttonFrame = Frame(root)
 buttonFrame.pack(
     side=TOP, fill=BOTH, padx=16)
 
+#
+# Initialize few Variables.
+#
+
 varName = tk.StringVar(root)
 varPath = tk.StringVar(root)
 
 
+#
+# Defined Few Functions.
+#
+
 def updatePaths():
-    paths[varName.get()] = varPath.get()
-    lstBox.delete(0, tk.END)
-    for item in paths:
-        lstBox.insert(tk.END, '{} : {}'.format(item, paths[item]))
+    print("Updating paths")
+    F = open("applications.txt", "a+")
+    F.write(f'{varName.get()},{varPath.get()}\n')
+    F.close()
 
 
 def file_opener():
@@ -60,6 +72,10 @@ def openPaths():
         tts.speak("Opening " + item)
         os.startfile(paths[item])
 
+
+#
+# DESIGN UI
+#
 
 ttk.Label(inputFrame, text='Enter Application Name',
           style='primary.TLabel').pack(pady=yPad, fill=X)
