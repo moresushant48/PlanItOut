@@ -1,4 +1,4 @@
-from globals import xPad, yPad
+from globals import xPad, yPad, APP_NAME
 
 from io import FileIO
 from progList import openNewWindow, openPrograms
@@ -26,7 +26,7 @@ engine.runAndWait()
 #
 style = Style(theme='journal')
 root = style.master
-root.title("PlanItOut")
+root.title(APP_NAME)
 root.geometry("500x350")
 
 #
