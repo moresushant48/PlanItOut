@@ -17,7 +17,7 @@ def addItem(lstBox, varUrl):
 
 def loadItems(lstBox):
     lstBox.delete(0, END)
-    F = open(BR_TXT, "r")
+    F = open(BR_TXT, "r+")
     lines = F.readlines()
 
     for line in lines:
