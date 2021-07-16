@@ -1,4 +1,5 @@
-from globals import TXT_SEPERATOR, xPad, yPad, APP_NAME
+from winBrowser import openBrowserWindow
+from globals import TXT_SEPERATOR, openWebBrowser, xPad, yPad, APP_NAME
 
 from io import FileIO
 from progList import openNewWindow, openPrograms
@@ -55,7 +56,10 @@ varPath = tk.StringVar(root)
 def updatePaths():
     print("Updating paths")
     F = open("applications.txt", "a+")
-    F.write(f'{varName.get()}{TXT_SEPERATOR}{varPath.get()}\n')
+    if not varName.get() and not varPath.get():
+        print("")
+    else:
+        F.write(f'{varName.get()}{TXT_SEPERATOR}{varPath.get()}\n')
     F.close()
 
 
@@ -85,8 +89,8 @@ ttk.Separator(buttonFrame, orient=HORIZONTAL,
 ttk.Button(buttonFrame, text='Add',
            command=updatePaths).pack(side=LEFT, padx=1, pady=yPad, fill=X, expand=1)
 
-ttk.Button(buttonFrame, text='Open',
-           command=lambda: openPrograms(root=root)).pack(side=LEFT, padx=1, pady=yPad, fill=X, expand=1)
+ttk.Button(buttonFrame, text='Browser',
+           command=lambda: openBrowserWindow(root=root)).pack(side=LEFT, padx=1, pady=yPad, fill=X, expand=1)
 
 ttk.Button(root, text='Show All Programs', style='primary.Outline.TButton',
            command=lambda: openNewWindow(root=root)).pack(side=BOTTOM, padx=xPad, fill=X, expand=1)
