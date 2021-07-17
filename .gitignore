@@ -3,3 +3,4 @@ build/
 dist/
 applications.txt
 testpaths.txt
+browser.txt
