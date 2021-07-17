@@ -2,7 +2,7 @@ from winBrowser import openBrowserWindow
 from globals import TXT_SEPERATOR, openWebBrowser, xPad, yPad, APP_NAME
 
 from io import FileIO
-from progList import openNewWindow, openPrograms
+from winPrograms import openNewWindow, openPrograms
 from tkinter import Frame, font, ttk, filedialog
 from tkinter.constants import BOTH, BOTTOM, HORIZONTAL, LEFT, RIGHT, TOP, X, Y
 import pyttsx3 as tts
