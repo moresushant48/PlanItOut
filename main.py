@@ -1,5 +1,5 @@
 from winBrowser import openBrowserWindow
-from globals import TXT_SEPERATOR, openWebBrowser, xPad, yPad, APP_NAME
+from globals import APP_TXT, BR_TXT, TXT_SEPERATOR, openWebBrowser, xPad, yPad, APP_NAME
 
 from io import FileIO
 from winPrograms import openNewWindow, openPrograms
@@ -21,6 +21,12 @@ engine.runAndWait()
 #
 #
 #
+
+#
+# Create files if dosen't exist.
+#
+open(APP_TXT, "w+")
+open(BR_TXT, "w+")
 
 #
 #  TkInter Init & Style.
