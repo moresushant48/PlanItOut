@@ -47,7 +47,7 @@ def openNewWindow(root):
     loadApplicationsToListbox(lstBox=lstBox)
 
 
-def openPrograms(root):
+def openPrograms():
     F = open("applications.txt", "r+")
     lines = F.readlines()
     for line in lines:

@@ -1,5 +1,6 @@
 from tkinter import messagebox
 import webbrowser
+from shutil import copyfile
 
 APP_NAME = "Plan It Out"
 APP_TXT = "applications.txt"

@@ -1,3 +1,3 @@
 @echo off
-python trial.py
+python runner.py
 pause
