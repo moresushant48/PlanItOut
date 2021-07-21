@@ -14,8 +14,13 @@ from ttkbootstrap import Style
 #
 # Create files if dosen't exist.
 #
-open(APP_TXT, "w+")
-open(BR_TXT, "w+")
+try:
+    open(APP_TXT, "r")
+    open(BR_TXT, "r")
+except:
+    open(APP_TXT, "w+")
+    open(BR_TXT, "w+")
+    print("Created New TXTs.")
 
 #
 #  TkInter Init & Style.
