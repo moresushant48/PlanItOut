@@ -56,7 +56,7 @@ varPath = tk.StringVar(root)
 def updatePaths():
     print("Updating paths")
     F = open(APP_TXT, "a+")
-    if not varName.get() and not varPath.get():
+    if not varName.get() or not varPath.get():
         print("")
     else:
         F.write(f'{varName.get()}{TXT_SEPERATOR}{varPath.get()}\n')
