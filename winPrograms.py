@@ -1,10 +1,9 @@
-from json import load
 from globals import APP_TXT, xPad, yPad, TXT_SEPERATOR
 
 import os
 import tkinter as tk
 import pyttsx3 as tts
-from tkinter import StringVar, ttk
+from tkinter import ttk
 from tkinter.constants import BOTH, END, TOP, X
 
 

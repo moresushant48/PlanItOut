@@ -1,6 +1,7 @@
-from globals import APP_TXT, TXT_SEPERATOR
+from globals import APP_TXT, BR_TXT, TXT_SEPERATOR
 import pyttsx3 as tts
 import os
+import webbrowser
 
 #
 #   Text To Speech Configuration.
@@ -27,4 +28,15 @@ def openPrograms():
         os.startfile(info[1][:-1])
 
 
+def openUrlsInBrowser():
+    F = open(BR_TXT, "r")
+    lines = F.readlines()
+
+    for line in lines:
+        webbrowser.open_new_tab(line)
+
+    F.close()
+
+
 openPrograms()
+openUrlsInBrowser()

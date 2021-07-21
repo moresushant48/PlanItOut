@@ -1,12 +1,11 @@
 from winBrowser import openBrowserWindow
-from globals import APP_TXT, BR_TXT, TXT_SEPERATOR, openWebBrowser, xPad, yPad, APP_NAME
+from globals import APP_TXT, BR_TXT, START_PATH, TXT_SEPERATOR, copyStartBatch, xPad, yPad, APP_NAME
 
+import os
 from io import FileIO
 from winPrograms import openNewWindow
-from tkinter import Frame, font, ttk, filedialog
-from tkinter.constants import BOTH, BOTTOM, HORIZONTAL, LEFT, RIGHT, TOP, X, Y
-import pyttsx3 as tts
-import os
+from tkinter import Frame, ttk, filedialog
+from tkinter.constants import BOTH, BOTTOM, HORIZONTAL, LEFT, TOP, X, Y
 import tkinter as tk
 from ttkbootstrap import Style
 
@@ -15,6 +14,7 @@ from ttkbootstrap import Style
 # Create files if dosen't exist.
 #
 try:
+    copyStartBatch()
     open(APP_TXT, "r")
     open(BR_TXT, "r")
 except:

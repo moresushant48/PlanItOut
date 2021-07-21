@@ -1,5 +1,4 @@
 from tkinter import StringVar, ttk
-import webbrowser
 from globals import BR_TXT, xPad, yPad
 import tkinter as tk
 from tkinter.constants import BOTH, BOTTOM, END, TOP, X
@@ -39,16 +38,6 @@ def deleteItem(lstBox):
     loadItems(lstBox=lstBox)
 
 
-def openUrlsInBrowser():
-    F = open(BR_TXT, "r")
-    lines = F.readlines()
-
-    for line in lines:
-        webbrowser.open_new_tab(line)
-
-    F.close()
-
-
 def openBrowserWindow(root):
     newWindow = tk.Toplevel(root, padx=xPad, pady=yPad)
     newWindow.title("Web Browser")
@@ -56,7 +45,7 @@ def openBrowserWindow(root):
 
     varUrl = StringVar()
 
-    ttk.Entry(newWindow, textvariable=varUrl).pack(side=TOP, pady=yPad, fill=X)
+    ttk.Entry(newWindow, textvariable=varUrl).pack(side=TOP, fill=X)
 
     btnAdd = ttk.Button(newWindow, text="Add",
                         command=lambda: addItem(lstBox=lstBox, varUrl=varUrl))
@@ -70,6 +59,3 @@ def openBrowserWindow(root):
     btnDelete = ttk.Button(newWindow, text="Delete",
                            command=lambda: deleteItem(lstBox=lstBox))
     btnDelete.pack(side=TOP, fill=X, pady=yPad)
-    btnTry = ttk.Button(newWindow, text="Try",
-                        command=openUrlsInBrowser)
-    btnTry.pack(side=TOP, fill=X)
