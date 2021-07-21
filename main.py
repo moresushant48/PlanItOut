@@ -2,7 +2,7 @@ from winBrowser import openBrowserWindow
 from globals import APP_TXT, BR_TXT, TXT_SEPERATOR, openWebBrowser, xPad, yPad, APP_NAME
 
 from io import FileIO
-from winPrograms import openNewWindow, openPrograms
+from winPrograms import openNewWindow
 from tkinter import Frame, font, ttk, filedialog
 from tkinter.constants import BOTH, BOTTOM, HORIZONTAL, LEFT, RIGHT, TOP, X, Y
 import pyttsx3 as tts
@@ -10,17 +10,6 @@ import os
 import tkinter as tk
 from ttkbootstrap import Style
 
-
-#
-#   Text To Speech Configuration.
-#
-engine = tts.init()
-voices = engine.getProperty('voices')
-engine.setProperty('voice', voices[1].id)
-engine.runAndWait()
-#
-#
-#
 
 #
 # Create files if dosen't exist.
@@ -61,7 +50,7 @@ varPath = tk.StringVar(root)
 
 def updatePaths():
     print("Updating paths")
-    F = open("applications.txt", "a+")
+    F = open(APP_TXT, "a+")
     if not varName.get() and not varPath.get():
         print("")
     else:

@@ -45,12 +45,3 @@ def openNewWindow(root):
                            command=lambda: deleteItem(lstBox=lstBox))
     btnDelete.pack(fill=X)
     loadApplicationsToListbox(lstBox=lstBox)
-
-
-def openPrograms():
-    F = open("applications.txt", "r+")
-    lines = F.readlines()
-    for line in lines:
-        info = line.split(TXT_SEPERATOR)
-        tts.speak("Opening " + info[0])
-        os.startfile(info[1][:-1])
