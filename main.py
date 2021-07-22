@@ -1,5 +1,5 @@
 from winBrowser import openBrowserWindow
-from globals import APP_TXT, BR_TXT, TXT_SEPERATOR, xPad, yPad, APP_NAME
+from globals import APP_TXT, BR_TXT, TXT_SEPERATOR, alertBox, xPad, yPad, APP_NAME
 
 import os
 from io import FileIO
@@ -59,6 +59,10 @@ def updatePaths():
         print("")
     else:
         F.write(f'{varName.get()}{TXT_SEPERATOR}{varPath.get()}\n')
+        alertBox("Added " + varName.get() + " successfully.")
+        varName.set("")  # clear App Name entry field
+        varPath.set("")  # clear App Path entry field
+
     F.close()
 
 
