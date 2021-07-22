@@ -1,5 +1,5 @@
 from tkinter import StringVar, ttk
-from globals import BR_TXT, xPad, yPad
+from globals import BR_TXT, alertBox, xPad, yPad
 import tkinter as tk
 from tkinter.constants import BOTH, BOTTOM, END, TOP, X
 
@@ -10,6 +10,8 @@ def addItem(lstBox, varUrl):
         print("")
     else:
         F.write(f'{varUrl.get()}\n')
+        alertBox("Added Website.")
+        varUrl.set("")
     F.close()
     loadItems(lstBox=lstBox)
 
@@ -41,10 +43,12 @@ def deleteItem(lstBox):
 def openBrowserWindow(root):
     newWindow = tk.Toplevel(root, padx=xPad, pady=yPad)
     newWindow.title("Web Browser")
-    newWindow.geometry("400x400")
+    newWindow.geometry("400x350")
 
     varUrl = StringVar()
 
+    ttk.Label(newWindow, text='Enter Website URL',
+              style='primary.TLabel').pack(side=TOP, pady=yPad, fill=X)
     ttk.Entry(newWindow, textvariable=varUrl).pack(side=TOP, fill=X)
 
     btnAdd = ttk.Button(newWindow, text="Add",
