@@ -2,6 +2,6 @@ __pycache__/
 build/
 dist/
 applications.txt
-testpaths.txt
+src/testpaths.txt
 browser.txt
 PlanItOut.spec

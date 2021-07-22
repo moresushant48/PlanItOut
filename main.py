@@ -1,5 +1,5 @@
 from winBrowser import openBrowserWindow
-from globals import APP_TXT, BR_TXT, START_PATH, TXT_SEPERATOR, copyStartBatch, xPad, yPad, APP_NAME
+from globals import APP_TXT, BR_TXT, TXT_SEPERATOR, xPad, yPad, APP_NAME
 
 import os
 from io import FileIO
@@ -14,7 +14,6 @@ from ttkbootstrap import Style
 # Create files if dosen't exist.
 #
 try:
-    copyStartBatch()
     open(APP_TXT, "r")
     open(BR_TXT, "r")
 except:

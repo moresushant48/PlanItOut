@@ -1,3 +1,4 @@
 @echo off
-python runner.py
+CD %~dp0
+START runner.exe
 pause
