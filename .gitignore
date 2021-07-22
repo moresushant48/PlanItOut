@@ -5,3 +5,4 @@ applications.txt
 src/testpaths.txt
 browser.txt
 PlanItOut.spec
+runner.spec
